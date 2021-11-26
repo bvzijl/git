@@ -7,3 +7,5 @@ git restore --staged <file-name> #replaces the local file with the staged file
 git restore <file-name> #restores the local file with the last commited file
 git ls-files #List files that are tracked by git
 git init <project-name #start new project
+git pull <origin-name> <branch-name> #Pull branch from origin to local
+git push <origin-name> <branch-name> #Push branch from local to origin
