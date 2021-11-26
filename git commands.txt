@@ -1,0 +1,8 @@
+git status #Gives the status of the git repository and the files within
+git add <file-name> #adds files to staging area
+git add -A #adds all the changes to the staging area
+git mv <file-name> <file-name> #renames the files and adds the rename to the staging area
+git mv <file-name> <path> #moves the file to the specified location
+git restore --staged <file-name> #replaces the local file with the staged file
+git restore <file-name> #restores the local file with the last commited file
+git ls-files #List files that are tracked by git
