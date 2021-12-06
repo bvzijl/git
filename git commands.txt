@@ -9,3 +9,22 @@ git ls-files #List files that are tracked by git
 git init <project-name #start new project
 git pull <origin-name> <branch-name> #Pull branch from origin to local
 git push <origin-name> <branch-name> #Push branch from local to origin
+git branch -a #List branches local and remote
+git branch <branch naam> # Makes new branch
+git checkout <branch name> # Switches to new branch
+git checkout -b <branch name> # Makes new branch and switches to
+git branch -m <old branch name> <new branch name> # Renames branch
+git branch -d <branch name> # Deletes branch
+git diff <branch name> <other branch name> # See differences between branches
+git merge <branch name> # Merges branch to current branch
+git merge <branch name> --no--ff # Merges branch to current branch and preserves branch lines
+git merge <branch name> -m "<Commit message>" # Merges branch to current branch with commit
+git mergetool # You have to configure a merge tool for this to solve merge conflicts
+
+Settings
+user.name=Bart van Zijl
+user.email=bart.v.zijl@gmail.com
+alias.hist=log --all --graph --decorate --oneline
+alias.ls=ls-files
+core.editor=code --wait
+core.autocrlf=input
