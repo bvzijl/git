@@ -7,8 +7,10 @@ git restore --staged <file-name> #replaces the local file with the staged file
 git restore <file-name> #restores the local file with the last commited file
 git ls-files #List files that are tracked by git
 git init <project-name #start new project
-git pull <origin-name> <branch-name> #Pull branch from origin to local
-git push <origin-name> <branch-name> #Push branch from local to origin
+git pull <remote-name> <branch-name> #Pull branch from remote to local
+git pull --rebase <remote-name> <branch-name> # Add remote changes before local changes
+git push <remote-name> <branch-name> #Push branch from local to remote
+git fetch # updates index to see changes on remote branch
 git branch -a #List branches local and remote
 git branch <branch naam> # Makes new branch
 git checkout <branch name> # Switches to new branch
@@ -20,6 +22,41 @@ git merge <branch name> # Merges branch to current branch
 git merge <branch name> --no--ff # Merges branch to current branch and preserves branch lines
 git merge <branch name> -m "<Commit message>" # Merges branch to current branch with commit
 git mergetool # You have to configure a merge tool for this to solve merge conflicts
+git rebase <branch name> # Rewind all changes to current branch add all changes to named branch and after adding all changes to named branch add all changes from current branch
+git rebase --abort # abort rebase if you don't want to solve conflicts
+git stash # default on save command
+git stash -u # adds untracked files
+git stash save "<message>" # stash with message
+git stash apply # returns last stashed items
+git stash apply stash@{<index>} # returns specifik stashed item
+git stash list # returns list of stashed stuff
+git stash drop # drops last stash
+git stash drop stash@{<index>} # deletes specifik stashed item
+git stash pop # apply and drop last stash
+git stash pop stash@{<index>} # apply and delete specifik
+git stash show stash@{<index>} # Shows info about stash
+git stash clear # removes all stashes
+git stash branch <branch name> # makes a branch with your stash and droppes stash
+git tag <tagName> # Tags last commit of branch
+git tag --list # show list of tags
+git diff <tagname> <tagname> # kedoi
+git show <tagName> # return commit at that tag
+git tag --delete <tagName> # deletes tag
+git tag -a <tag name> # tag with message. you can see the message with git show <tag>
+git tag <tag name> -m "<message>" #tag with inline message
+git tag -a <tag name> <commit id> # annotated tag for previous commit
+git tag -a <tag name> -f <new commit id> # change tag commit to other commit
+git push <remote-name> <tag name> # push tag to remote
+git push origin master --tags # Synchronize master branch and push all tags that are missing
+git push origin :v01 # push nothing to tag name to delete tag form remote
+git commit -a # Commits with unstaged
+git commit # commits staged
+git commit -am #commits with staged and inline message
+git commit --amend # change last commit message
+git reset HEAD^1 # Go back 1 level and delete current
+git reset <commit id || HEAD{<index>}> # go's back to previous state
+git reflog # shows everything you have done
+
 
 Settings
 user.name=Bart van Zijl
